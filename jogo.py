@@ -3,8 +3,11 @@ print("********************************")
 print("Bem vindo ao jogo de Adivinhação")
 print("********************************")
 
-numerosecreto = random.randrange(1, 51)
-totaldetentativas = 10
+palavrasecreta = "abacaxi".upper()
+letrasacertadas = ["_"]*len(palavrasecreta)
+totaldetentativas = len(palavrasecreta)
+
+print
 
 
 while(totaldetentativas > 0):

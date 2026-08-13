@@ -1,9 +1,22 @@
+import random
+from desenhojogo import desenhar_forca, mensagem_perdedor, mensagem_vencedor
+
 #Jogo da forca
 print("********************************")
 print("Bem vindo ao jogo de forca")
 print("********************************")
 
-palavra_secreta = "Abacaxi".upper()
+# lendo arquivos
+with open("palavras.txt", "r")
+    palavras = []
+    for linha in arquivo:
+        palavras.append(linha.strip())
+
+
+numero = random.randrange(0, len(palavras))
+
+palavrasecreta = palavras[numero]
+
 letras_acertadas = ["_"]*len(palavra_secreta)
 total_tentativas = len(palavra_secreta)
 
@@ -12,6 +25,7 @@ print(letras_acertadas)
 enforcou = False
 acertou = False
 tentativas = 0
+
 while(not enforcou and not acertou and tentativas > 5):
     chute = input("Digite uma letra? ")
     chute = chute.strip()
@@ -33,8 +47,9 @@ while(not enforcou and not acertou and tentativas > 5):
     print("Tentativas restantes: {}".format(total_tentativas - tentativas))
 
     if(acertou):
-        print("Parabéns, você ganhou!")
+        mensagem_vencedor()
     elif(enforcou):
-        print("Você perdeu! A palavra era {}".format(palavra_secreta))
+        desenhar_forca(tentativas)
+        mensagem_perdedor(palavra_secreta)
 
 print("Fim do jogo")
