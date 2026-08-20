@@ -1,11 +1,12 @@
 import random
 print("********************************")
-print("Bem vindo ao jogo de Adivinhação")
+print("Bem vindo ao jogo de adivinhação")
 print("********************************")
 
 palavrasecreta = "abacaxi".upper()
 letrasacertadas = ["_"]*len(palavrasecreta)
 totaldetentativas = len(palavrasecreta)
+numerosecreto = random.randint(1, 100)
 
 print
 
